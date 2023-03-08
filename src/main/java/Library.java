@@ -73,19 +73,21 @@ public class Library {
         }
     }
 
-    public void doesBookExist(String ISBN){
+    public void doesBookExist(){
         System.out.println("Enter book's ISBN.");
+        String ISBN = input.next();
         for (int i = 0; i < books.size(); i++) {
             if (ISBN.equals(books.get(i).getISBN())) {
-                System.out.println("Available!");
+                System.out.println("true");
                 return;
             }
         }
-        System.out.println("Not available!");
+        System.out.println("false");
     }
 
-    public void increaseBook(String ISBN){
+    public void increaseBook(){//*******
         System.out.println("Enter the ISBN of the book.");
+        String ISBN = input.next();
         System.out.println("Enter number of books to be added.");
         int increasedN = input.nextInt();
         for (int i = 0; i < books.size(); i++) {
@@ -95,8 +97,9 @@ public class Library {
         }
     }
 
-    public void decreaseBook(String ISBN){
+    public void decreaseBook(){//********
         System.out.println("Enter the ISBN of the book.");
+        String ISBN = input.next();
         System.out.println("Enter number of books to be removed.");
         int decreasedN = input.nextInt();
         for (int i = 0; i < books.size(); i++) {
@@ -140,7 +143,9 @@ public class Library {
         System.out.println("This user doesn't exist.");
     }
 
-    public void searchUser(String username){
+    public void searchUser(){
+        System.out.println("Enter username");
+        String username = input.next();
         for (int i = 0; i < users.size(); i++) {
             if (username.equals(users.get(i).getUsername())) {
                 System.out.println(users.get(i).getUsername());
@@ -165,9 +170,9 @@ public class Library {
         }
     }
 
-    public void doesUserExist(String username){
+    public void doesUserExist(){
         System.out.println("Enter username.");
-
+        String username = input.next();
         for (int i = 0; i < users.size(); i++) {
             if (username.equals(users.get(i).getUsername())) {
                 System.out.println("true");
@@ -181,9 +186,9 @@ public class Library {
     //librarian related functions
 
     public void addLibrarian(){
-        System.out.println("Enter username for new librarian");
+        System.out.println("Enter username");
         String UN = input.next();
-        System.out.println("Enter password for new librarian");
+        System.out.println("Enter password");
         String pass = input.next();
         Librarian newLibrarian = new Librarian(UN, pass);
         for (int i = 0; i < librarians.size(); i++) {
@@ -212,8 +217,9 @@ public class Library {
         //TODO
     }
 
-    public void searchLibrarian(String username){
-
+    public void searchLibrarian(){
+        System.out.println("Enter username");
+        String username = input.next();
         for (int i = 0; i < librarians.size(); i++) {
             if (username.equals(librarians.get(i).getUsername())) {
                 System.out.println(librarians.get(i).getUsername());
@@ -238,9 +244,9 @@ public class Library {
         }
     }
 
-    public void doesLibrarianExist(String username){
+    public void doesLibrarianExist(){
         System.out.println("Enter username.");
-
+        String username = input.next();
         for (int i = 0; i < librarians.size(); i++) {
             if (username.equals(librarians.get(i).getUsername())) {
                 System.out.println("true");

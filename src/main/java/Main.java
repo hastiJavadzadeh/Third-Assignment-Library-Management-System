@@ -9,9 +9,7 @@ public class Main {
      */
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         Library library = new Library();
-        library.addLibrarian();
         runMenu(library);
     }
 
@@ -38,11 +36,9 @@ public class Main {
                     System.out.println("Error!");
                 }
             } else if (in == 2) {
-                System.out.println("Enter username");
-                String UN = input.next();
-                System.out.println("Enter password");
-                String pass = input.next();
-                System.out.println("1.add book\t2.remove book\t3.update book\n4.add user\t5.remove user\t6.update user\n7.add librarian\t8.remove librarian\t9.update librarian\n10.search book\t11.search user\t12.search librarian");
+
+                library.addLibrarian();
+                System.out.println("1.add book\t2.remove book\t3.update book\n4.add user\t5.remove user\t6.update user\n7.add librarian\t8.remove librarian\t9.update librarian\n10.search book\t11.search user\t12.search librarian\n13.increase book\t14.decrease book\n15.book existence\t16.user existence\t17.librarian existence");
                 int choice = input.nextInt();
                 if (choice == 1) {
                     library.addBook();
@@ -65,13 +61,19 @@ public class Main {
                 } else if (choice == 10) {
                     library.searchBook();
                 } else if (choice == 11) {
-                    System.out.println("Enter username.");
-                    String username = input.next();
-                    library.searchUser(username);
+                    library.searchUser();
                 } else if (choice == 12) {
-                    System.out.println("Enter username.");
-                    String username = input.next();
-                    library.searchLibrarian(username);
+                    library.searchLibrarian();
+                } else if (choice==13) {
+                    library.increaseBook();
+                } else if (choice==14) {
+                    library.decreaseBook();
+                } else if (choice==15) {
+                    library.doesBookExist();
+                } else if (choice==16) {
+                    library.doesUserExist();
+                } else if (choice==17) {
+                    library.doesLibrarianExist();
                 }
             } else if (in == 3) {
                 break;
